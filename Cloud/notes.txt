@@ -1,0 +1,128 @@
+Hybrid MultiCloud Architecture
+    Flexibility
+    Allowing shifting of data and resources according to the usage
+    Prevents vendor lock in and opens up options to other cloud providers as well
+    Extra recommendation systems , usage of AI and ML for predictive analysis
+
+Microservices Architecture
+    Basically it focuses on breaking up a larger problem into smaller ones
+    Loosely coupled , independently deployable services
+
+    Building a large application function vise , for eg:
+        One team can handle search feature
+        One can handle the recommendation
+        One can handle the data
+
+    Each process can be completed by a dedicated team of developers
+    Each process can have its particular stack and resources
+
+    There is no need to create everything from scratch or build it together
+    Different teams can work on their specific functions and then just
+    join all the functionalities using API
+
+    For joining they will require a Service discovery to identify each and every
+    function and then each function can be transferred using Containers
+
+    Containers provide the advantage in fault toularence and helps in keeping
+    the application running , if one functionality fails then we can just 
+    replace the container that is affected
+
+    Just like on a streaming platform by joining all the functionalities , the 
+    platform will not only suggest us the trending topics but also the titles
+    based on our watch history
+
+Serverless Computing
+    Offloads responsibility of infrastructure , scheduling , patching and provisioning to cloud providers
+    Making it easy for developers to focus on building and logic of code 
+    Better suited for short running processes
+    Like IOT , Serverless Microservices , 
+    But on the other hand while handling workloads of a long running process
+    The traditional model is preferable and more cost effective
+
+    Problematic in the case of:
+        Authentication
+        Monitoring
+        Configuration Management
+        i.e Vendor lock-in
+
+Cloud Native Apps
+    Flexibility , Adaptive
+    Specifically build for cloud platforms or existing apps are modernized accordingly
+
+DevOps
+    Process in which multiple parties like:
+        Business (customers),
+        Developers
+        Operations
+        Quality assurance
+    All the teams put a collaborative approach for an efficient development
+
+    This provides benefits in
+    Continuous delivery
+    Continuous integration
+    Continuous development
+    Continuous Monitoring
+    Delivery pipeline : 
+        Includes ideation , coding , building , deploying , managing , 
+        Continuous improvement
+
+    DevOps help in Cloud Computing:
+        Automatic and proper installation
+        Complex work because of so many independent processes and tech stack
+        so DevOps define how people work together
+        Continuos integration and deployment pipeline
+        test in low cost and production like environments
+        Recover from disasters by rebuilding system quickly 
+
+        Provides powerful set of rules , practices and tools for modernization
+        
+    CLoud security:
+        Considerations for each cloud service model
+        -- Lack of visibility in public cloud
+        -- Multitenancy in a public cloud
+        -- Access Management
+        -- Misconfiguration of assets
+
+        Threats & Risks:
+        -- Insider threats , from anyone with access or who used to have access
+        -- DDoS attacks , denial of service by overloading the system using multiple
+        syncronised system all around through Simple Network Management Protocol(SNMP)
+        -- Security breach
+
+        Identity & Access Management:
+        -- AI powered context to automate risk management , constantly authenticate
+        -- Allow scalability
+        -- Modernize at your own pace 
+        -- Establish a zero-trust implementation that ensures that right users
+        get the right resources at the right time under right conditions 
+
+        Benefits of Cloud Network Security:
+        -- Centralized security monitoring and management
+        -- Easy management and updating of granular policies
+        -- Real time detection and powerful prevention against intrusions
+        -- Automated Configuration and Management
+        -- Encryption services to protect data at rest and in transit
+        -- Centralized monitoring and management of Identity and Access
+
+        Best Practices for cloud Security
+        1) Identify your cloud usage state and risks 
+            Who has access
+            Detecting unknown cloud usage
+            Checking Configuration
+            Monitoring for malicious usage
+        2) Protect your cloud system
+            Assigning protection policies
+            Encrypting sensitive data
+            Restricting data sharing to unknown devices
+            Implementing bot protection
+            Anti malware 
+        3) Response to successful attacks and attepts to attacks
+            Add additional authentication and verification steps
+            Add new policies for new cloud services
+
+        NIST based 5 pillers
+        Identify , Protect , Detect , Respond & Recovery 
+
+    
+    
+    

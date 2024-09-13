@@ -1,0 +1,62 @@
+Container Orchestration: Automates process of containers
+    -- Large number of containers management issue
+
+    -- Configuration files like YAML or JSON
+        Find resources , establish network and store Logs
+    -- Deployment scheduling
+        Automatically schedules new container deployment
+        Finds right host based on predefined settings
+    -- Manages Container lifecycle
+        System parameters
+        File parameters
+    -- Scaling and productivity
+        Maintain productivity
+        Support Scaling
+
+    One of the Orchestration tools : kubernetes
+
+    Kubernetes : Open source system for automating deployment , scaling and 
+    management of contarized applications
+    
+    Concepts:
+    -- Pods : Smallest deployable compute objects
+    -- Services : Exposes App running on a pod
+    -- Storage : Both persistent and temporary
+    -- Configuration : Resources for configuring Pods
+    -- Security : For cloud native apps enforces security for Pod and API access
+    -- Policies : For pods to match with Nodes
+    -- Scheduling
+    -- Preemtion
+    -- Administration
+
+    Points to remember:
+    -- Not the traditional Paas 
+    -- Not rigid but flexible that supports variety of workloads
+    -- Does not provide integration/continuous delivery pipelines
+    -- Doesnt prescribe logginh , monitoring , or alerting
+    -- Doesnt provide built in middleware or databases 
+
+    Capabilities:
+    -- Automatic roll out and rollbacks(Monitoring , changing)
+    -- Automatically mounts chosen storage(local , network or public storage)
+    -- Scales load automatically based on metrics
+    -- Resource utilization and cost saving(Automated bin packing)
+    -- Stores , manages and updates sensitive data without rebuilding the images
+    -- Assigns both IPv4 and IPv6
+    -- Manages workloads and replace failed containers
+    -- Self healing and clients only see the healthy containers
+    -- Load balances traffic accross Pods
+    -- Automatically adds features to cluster without updating source code
+
+    Architecture:
+    -- Deployment of kubernetes is known as a cluster
+    -- Consist of Control plane which manages with worker Nodes
+    -- Control plane made up of controllers , API server , schedulers and etcd
+    -- Worker node consist of Pods and pods consist of many containers
+    -- Worker nodes are managed by worker plane
+    -- Worker plane consist of nodes , Kubelet , container runtime & kubeProxy
+    -- Kubelet the most imp part of Worker Nodes
+        Communicates with the API
+        Ensures that the pods and respective containers are working fine 
+        reports to the control plane on pods' health and status
+    
