@@ -60,3 +60,99 @@ Container Orchestration: Automates process of containers
         Ensures that the pods and respective containers are working fine 
         reports to the control plane on pods' health and status
     
+    Kubernetes objects:
+    -- They are persistent entities (Pods , Deployments , Namespaces , ReplicaSets)
+    -- Consist of two files : 
+        Object spec : Provided by the user , defines the desired state
+        Status : Provided by kubernetes , defines the current state
+    -- To work with objects work with kubernetes API directly
+    -- Labels : Help identify , group and organize objects
+    -- Namespaces provide a way for isolating group of resources for specific teams
+    -- Pods : Simplest unit in Kubernetes , represents processes , consist of containers
+    -- ReplicaSet helps in managing horizontal scaled running pods
+        Defines which pods to acquire
+        Generally encapsulated by a Deployment
+    -- Deployment provides updates for Pods and ReplicaSets
+    
+    Advanced topics for objects:
+    -- REST Object like pods
+    -- Logical abstraction for pods
+    -- Provides policies on how to access the pods
+    -- Acts as a load balancer
+    -- Assigned a unique IP address for accessing apps on Pods
+
+    Ingress : An API object combined with a controller
+    -- Provides routing rules to manage multiple users access to services in kubernetes
+    -- Exposes application to internet through port 80(HTTP) and 443(HTTPS)
+    -- ELB is expensive and is managed outside whereas cluster monitors Ingress
+    
+    DaemonSet : 
+    -- Ensure that Nodes keep a copy of the Pods
+    -- Pods are garbage collected when removed from a cluster
+    -- If you delete a DaemonSet, all Pods are removed
+    -- Ideally used for storage , logs and monitoring nodes
+
+                        Ingress objects       vs          Ingress controllers
+Feature 	                Ingress Objects 	        Ingress Controllers
+Definition 	API object managing external access to services 	Cluster resource implementing rules specified by Ingress
+Primary Function 	Regulates external access routing 	Implements rules, fulfilling the Ingress
+Configuration Source 	Rules defined on the Ingress resource 	Reads and processes information from the Ingress object
+Traffic Handling 	Manages HTTP and HTTPS routes 	Utilizes load balancer, configures frontends for traffic
+Activation 	Active upon configuration with Ingress resource 	Must be explicitly running for Ingress to function
+Handling Protocols 	Focused on HTTP and HTTPS 	Implements rules for various protocols and ports
+Automatic Startup 	Activated with configuration 	Requires explicit activation in the cluster
+Analogy 	Traffic rule set for the cluster 	Executor, similar to Nginx instance handling rules
+
+Kubectl : (The Kubernetes CLI) KubeControl 
+-- Helps user deploy applications
+-- Inspect & Manage cluster , resources , view logs and more
+-- Manage running cluster workloads
+-- Key command types : 
+
+    Imperative commands
+        Create , update or delete live objects directly
+        Operations specified as flags
+        Easy to learn: kubectl run nginx --image nginx
+        No audit trail which is imp for loggin changes
+        Not very flexible(no template or integration)
+        Good for deployment and testing
+
+        Limitations:
+            if a person executes a code to deploy something and another person
+            wants to deploy the exact same thing then that person cannot because
+            there is no config file and the exact command needs to be asked
+            from the first person
+
+    Imperative object configuration
+        This command specifies required operations , optional flags & atleast one file
+        Config file must contain a full definition of objects in YAML or JSON
+            kubectl create -f nginx.yaml 
+        Coinfig templates help relicate identical results
+
+        Adv:
+            May be stored in source control system like git
+            Can integrate with change processes
+            Provides audit trails and templates for creating new objects
+        DisAdv:
+            Requires basic understanding of the object schema
+            Requires writing in YAML/JSON file
+            All necessary command operations must be specified
+
+    Declarative object configuration
+        Stores configuration data in files
+        Operations are identified by kubectl not the user
+        Works on directories or individual files
+            kubectl apply -f nginx
+        Configuratioun files define desired state
+        ideal method for production systems
+
+        get command used to list the containers or objects
+        apply command is used to create resources using YAML/JSON
+        scale command to scale the number of replicas 
+        
+
+-- kubectl [commmand] [type] [name] [flags]
+    command: any operation (create,get,apply,delete)
+    type: resource type (pod , deployment , ReplicaSet)
+    name: resource name (if applicable)
+    flags: special options or modifiers that override default values
